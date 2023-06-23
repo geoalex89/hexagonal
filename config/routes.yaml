@@ -1,0 +1,11 @@
+home:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: 'health'
+        permanent: true
+
+health:
+    path: /health
+    controller: Hexagonal\UI\Http\Controller\Health\HealthController
+    methods: GET

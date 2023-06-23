@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  nginx:
+    container_name: hexagonal_nginx
+    build: ./docker/images/nginx
+    hostname: hexagonal.gv
+    volumes:
+      - ./:/var/www/html/hexagonal
+      - ./docker/mounts/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/mounts/nginx/sites-available:/etc/nginx/sites-available
+      - ./docker/mounts/nginx/sites-available:/etc/nginx/sites-enabled
+    dns:
+      - 172.18.0.2
+      - 8.8.8.8
+    networks:
+      shared-net:
+        ipv4_address: 172.18.1.35
+
+  php-fpm:
+    build: ./docker/images/php-fpm
+    container_name: hexagonal_fpm
+    volumes:
+      - ./docker/environments/.env.local:/var/www/html/hexagonal/.env.local:ro
+      - ./docker/environments/.env.test:/var/www/html/hexagonal/.env.test:ro
+      - ./:/var/www/html/hexagonal
+    dns:
+      - 172.18.0.2
+      - 8.8.8.8
+    networks:
+      shared-net:
+        ipv4_address: 172.18.1.21
+    working_dir: /var/www/html/hexagonal
+
+networks:
+  shared-net:
+    external: true
