@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hexagonal\Infrastructure\Repository\InMemory\Partner;
+namespace Hexagonal\Infrastructure\Repository\InMemory\Price;
 
 use Hexagonal\Domain\Price\Model\Price;
 use Hexagonal\Domain\Price\Repository\PriceRepository as PriceRepositoryInterface;

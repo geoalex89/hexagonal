@@ -12,7 +12,7 @@ abstract class IntValueObject implements Stringable
     {
     }
 
-    public static function create(int $value): static
+    public static function create(int $value): self
     {
         return new static($value);
     }

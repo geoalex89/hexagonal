@@ -6,7 +6,7 @@ namespace Hexagonal\Infrastructure\Repository\InMemory\Room;
 
 use Hexagonal\Domain\Partner\Room;
 use Hexagonal\Domain\Partner\VO\PartnerId;
-use Hexagonal\Domain\Price\Repository\RoomRepository as RoomRepositoryInterface;
+use Hexagonal\Domain\Room\Repository\RoomRepository as RoomRepositoryInterface;
 use Hexagonal\Domain\Room\VO\RoomCollection;
 
 final class RoomRepository implements RoomRepositoryInterface

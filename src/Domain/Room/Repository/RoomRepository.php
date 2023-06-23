@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hexagonal\Domain\Price\Repository;
+namespace Hexagonal\Domain\Room\Repository;
 
 use Hexagonal\Domain\Partner\Room;
 use Hexagonal\Domain\Partner\VO\PartnerId;

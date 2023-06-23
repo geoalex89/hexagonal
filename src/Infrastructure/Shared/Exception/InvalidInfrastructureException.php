@@ -6,7 +6,7 @@ namespace Hexagonal\Infrastructure\Shared\Exception;
 use Exception;
 use Hexagonal\Domain\Shared\Traits\ExceptionHandler;
 
-class InvalidInfrastructureException extends Exception
+abstract class InvalidInfrastructureException extends Exception
 {
     use ExceptionHandler;
 
