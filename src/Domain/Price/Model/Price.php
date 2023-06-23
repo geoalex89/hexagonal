@@ -18,4 +18,24 @@ final class Price
         private readonly Audit $audit,
     ) {
     }
+
+    public function id(): PriceId
+    {
+        return $this->id;
+    }
+
+    public function roomId(): RoomId
+    {
+        return $this->roomId;
+    }
+
+    public function period(): Period
+    {
+        return $this->period;
+    }
+
+    public function audit(): Audit
+    {
+        return $this->audit;
+    }
 }

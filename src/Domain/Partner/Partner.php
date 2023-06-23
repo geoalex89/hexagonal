@@ -11,8 +11,23 @@ final class Partner
 {
     public function __construct(
         private readonly PartnerId $id,
-        private readonly boolean $status,
+        private readonly bool $status,
         private readonly Audit $audit,
     ) {
+    }
+
+    public function id(): PartnerId
+    {
+        return $this->id;
+    }
+
+    public function status(): bool
+    {
+        return $this->status;
+    }
+
+    public function audit(): Audit
+    {
+        return $this->audit;
     }
 }

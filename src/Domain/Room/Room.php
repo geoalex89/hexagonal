@@ -16,4 +16,19 @@ final class Room
         private Audit $audit,
     ) {
     }
+
+    public function id(): RoomId
+    {
+        return $this->id;
+    }
+
+    public function partnerId(): PartnerId
+    {
+        return $this->partnerId;
+    }
+
+    public function audit(): Audit
+    {
+        return $this->audit;
+    }
 }

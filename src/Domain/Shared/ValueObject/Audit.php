@@ -19,8 +19,10 @@ final class Audit implements ArrayRepresentable
     }
 
     /** @throws InvalidSharedException */
-    public static function create(DateTimeImmutable $createdAt, ?DateTime $updatedAt = null): self
-    {
+    public static function create(
+        DateTimeImmutable $createdAt = new \DateTimeImmutable('now', new \DateTimeZone('UTC')),
+        ?DateTime $updatedAt = null
+    ): self {
         return new self($createdAt, $updatedAt);
     }
 
